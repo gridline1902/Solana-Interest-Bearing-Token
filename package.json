@@ -2,7 +2,7 @@
   "name": "solana-interest-bearing-token",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@solana/spl-token": "^0.4.7",
-    "@solana/web3.js": "^1.93.2"
+    "@solana/web3.js": "^1.93.2",
+    "bigint-buffer": "^1.1.5"
   }
 }

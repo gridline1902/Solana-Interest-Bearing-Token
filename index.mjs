@@ -22,7 +22,7 @@ const payer = Keypair.generate();
 // if I were to put 2000000000 instead == 2 Sol
 const airdropSign = await connection.requestAirdrop(
   payer.publicKey, //payer's public key
-  LAMPORTS_PER_SOL // = 1 Sol
+  0 // = 1 Sol
 );
 
 //
@@ -58,14 +58,15 @@ const mint = await createInterestBearingMint(
 
 console.log(mint.toBase58());
 
-const accountBalance = 400;
+const accountBalance = 1000;
 
-const uiAmount = await amountToUiAmount(
-  connection,
-  payer,
-  mint,
-  accountBalance,
-  TOKEN_2022_PROGRAM_ID
-);
-
-console.log(uiAmount);
+setInterval(async () => {
+  const uiAmount = await amountToUiAmount(
+    connection,
+    payer,
+    mint,
+    accountBalance,
+    TOKEN_2022_PROGRAM_ID
+  );
+  console.log(uiAmount);
+}, 2000);
